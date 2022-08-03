@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+# Projeto Trybewallet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto realizado utilizando a biblioteca rect em conjunto com Redux, sendo o projeto de finalização do bloco de estudos sobre estas ferramentas.
 
-## Available Scripts
+#### Objetivos
 
-In the project directory, you can run:
+A aplicação TrybeWallet foi desenvolvida para funcionar como uma carteira de controle de gastos com conersos de moedas. A aplicação deve permitir que o usuário adicione, remova e edite um gasto. Deve exibir todos os gastos adicionados em ordem e mostrar o total, representando todas as despesas adicionadas pelo usuário.
 
-### `npm start`
+#### Habilidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Neste projeto foi utilizado a biblioteca [React](https://pt-br.reactjs.org/) onde se trabalhou a ideia de ciclo de vida de componentes. O Trybewallet é uma Single Page Application e, portanto, foi utilizado o [React Router](https://reactrouter.com/) para navegar entra as páginas. Também foi utilizado a biblioteca [Redux](https://redux.js.org/) para gerenciamento do estado da aplicação. Para alinhar o código com as boas práticas de desenvolvimento foram utilizadas as ferramentas [ESLint](https://github.com/eslint/eslint) e [StyleLint](https://stylelint.io/). Os testes da aplicação foram desenvolvidos utilizando a [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Execução
 
-### `npm test`
+Para exercutar o projeto utilize o comando abaixo para instalar as dependências após o clone do repositório.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+      npm install
