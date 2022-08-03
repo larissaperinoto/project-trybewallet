@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/trybewallet/static/js/main.114e7389.js",
+    "index.html": "/trybewallet/index.html",
+    "main.114e7389.js.map": "/trybewallet/static/js/main.114e7389.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.114e7389.js"
+  ]
+}
