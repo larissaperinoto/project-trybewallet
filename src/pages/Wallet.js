@@ -15,6 +15,8 @@ import {
   deleteExpense as deleteExpenseAction,
 } from '../redux/actions';
 
+import './Wallet.css';
+
 const INITIAL_STATE = {
   id: '',
   value: '',
@@ -92,19 +94,21 @@ class Wallet extends Component {
 
   render() {
     return (
-      <>
+      <div className="wallet_container">
         <Header />
-        <WalletForm
-          { ...this.state }
-          handleChange={ this.handleChange }
-          onClickSave={ this.onClickSave }
-          onClickEdit={ this.onClickEdit }
-        />
-        <Table
-          handleDeleteExpense={ this.handleDeleteExpense }
-          handleEditExpense={ this.handleEditExpense }
-        />
-      </>
+        <div className="body_wallet_container">
+          <WalletForm
+            { ...this.state }
+            handleChange={ this.handleChange }
+            onClickSave={ this.onClickSave }
+            onClickEdit={ this.onClickEdit }
+          />
+          <Table
+            handleDeleteExpense={ this.handleDeleteExpense }
+            handleEditExpense={ this.handleEditExpense }
+          />
+        </div>
+      </div>
     );
   }
 }
