@@ -1,11 +1,12 @@
 * {
   margin: 0;
-  background-color: rgb(17, 74, 124);
+  padding: 0;
 }
 
 .login_container {
   width: 100%;
   display: flex;
+  background-color: rgb(17, 74, 124, 0.9);
 }
 
 .user_form_container {
@@ -38,43 +39,49 @@
   background-color: rgba(76, 54, 136, 0.273);
   box-shadow: -4px 2px 0 wheat;
   border: 2px solid transparent;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .email_input, .password_input {
   width: 94%;
   padding: 12px;
   margin-bottom: 5px;
-  border: 2px solid rgb(143, 38, 152);
-  border-radius: 10px;
-  background-color: rgb(143, 38, 152);
+  border: none;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.818);
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Righteous', cursive;
+  background-color: white;
+  cursor: pointer;
 }
 
 .email_input::placeholder, .password_input::placeholder {
-  color: rgba(255, 255, 255, 0.656);
+  color: rgba(55, 55, 55, 0.656);
   font-weight: 600;
+  font-family: 'Righteous', cursive;
 }
 
 .email_input:hover, .password_input:hover {
-  border: 2px solid rgb(156, 106, 160);
+  box-shadow: -1px 2px 0 wheat;
 }
 
 .button_user_form {
-  width: 100%;
+  width: 101%;
   padding: 10px;
-  border: 1px solid rgb(153, 88, 214);
-  border-radius: 10px;
-  background-color: rgb(153, 88, 214);
-  color: rgb(250, 250, 250);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.855);
+  color: white;
   font-weight: 600;
   font-size: 20px;
-  box-shadow: -2px 2px 0 wheat;
+  font-family: 'Righteous', cursive;
+  box-shadow: -1px 2px 0 wheat;
   cursor: pointer;
 }
 
 .button_user_form:hover {
-  border: 1px solid wheat;
-  box-shadow: -4px 2px 0 wheat;
+  box-shadow: -3px 2px 0 wheat;
+  background-color: rgba(140, 77, 138, 0.8);
 }
 
 .image_container {
