@@ -1,0 +1,64 @@
+.form_expense_container {
+  width: 81%;
+  padding: 30px 50px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Righteous', cursive;
+  color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0, 0.3);
+  box-shadow: -3px -2px 0 rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+
+.value_input, .description_input {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-family: 'Righteous', cursive;
+  padding: 10px 35px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(251, 251, 251, 0.9);
+  box-shadow: -2px -1px 0 rgb(17, 74, 124, 0.9);
+  cursor: pointer;
+}
+
+.value_input::placeholder, .description_input::placeholder {
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+
+.tag_select, .currency_select, .method_select {
+  font-size: 16px;
+  font-family: 'Righteous', cursive;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(251, 251, 251, 0.9);
+  box-shadow: -2px -1px 0 rgb(17, 74, 124, 0.9);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.tag_select option, .currency_select option, .method_select option {
+  background-color: rgba(251, 251, 251, 0.9);
+}
+
+.button_expense_form {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.855);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Righteous', cursive;
+  box-shadow: -2px -1px 0 rgba(140, 77, 138, 0.8);
+  cursor: pointer;
+}
+
+.button_expense_form:hover {
+  box-shadow: -3px -2px 0 rgb(252, 252, 252);
+  background-color: rgba(140, 77, 138, 0.8);
+}

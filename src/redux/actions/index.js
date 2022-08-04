@@ -5,6 +5,7 @@ export const SUM_TOTAL_EXCHANGE = 'SUM_TOTAL_EXCHANGE';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 export const TO_EDIT = 'TO_EDIT';
+export const EXIT_WALLET = 'EXIT_WALLET';
 
 export const saveLoginEmail = (email) => ({
   type: SAVE_USER_LOGIN,
@@ -38,4 +39,8 @@ export const editExpense = (id) => ({
 
 export const toEdit = () => ({
   type: 'TO_EDIT',
+});
+
+export const exitWalletPage = () => ({
+  type: 'EXIT_WALLET'
 });

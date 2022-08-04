@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import './WalletForm.css';
 
 class WalletForm extends Component {
   render() {
@@ -15,28 +16,30 @@ class WalletForm extends Component {
       editor,
       currencies } = this.props;
     return (
-      <form>
+      <form className="form_expense_container">
         <label htmlFor="value-input">
-          Valor:
           <input
             data-testid="value-input"
             id="value-input"
             type="number"
             name="value"
             value={ value }
+            placeholder="Digite um valor"
             onChange={ (event) => handleChange(event) }
+            className="value_input"
           />
         </label>
 
         <label htmlFor="description-input">
-          Descrição:
           <input
             data-testid="description-input"
             id="description-input"
             type="text"
             name="description"
+            placeholder="Descreva a despesa"
             value={ description }
             onChange={ (event) => handleChange(event) }
+            className="description_input"
           />
         </label>
 
@@ -45,8 +48,11 @@ class WalletForm extends Component {
           name="currency"
           value={ currency }
           onChange={ (event) => handleChange(event) }
+          className="currency_select"
         >
-          {currencies.map((item, i) => <option key={ i }>{item}</option>)}
+          <optgroup label="Moeda">
+            {currencies.map((item, i) => <option key={ i }>{item}</option>)}
+          </optgroup>
         </select>
 
         <select
@@ -54,10 +60,13 @@ class WalletForm extends Component {
           name="method"
           value={ method }
           onChange={ (event) => handleChange(event) }
+          className="method_select"
         >
-          <option>Dinheiro</option>
-          <option>Cartão de crédito</option>
-          <option>Cartão de débito</option>
+          <optgroup label="Método de pagamento">
+            <option>Dinheiro</option>
+            <option>Cartão de crédito</option>
+            <option>Cartão de débito</option>
+          </optgroup>
         </select>
 
         <select
@@ -65,12 +74,15 @@ class WalletForm extends Component {
           name="tag"
           value={ tag }
           onChange={ (event) => handleChange(event) }
+          className="tag_select"
         >
-          <option>Alimentação</option>
-          <option>Lazer</option>
-          <option>Trabalho</option>
-          <option>Transporte</option>
-          <option>Saúde</option>
+          <optgroup label="Categoria">
+            <option>Alimentação</option>
+            <option>Lazer</option>
+            <option>Trabalho</option>
+            <option>Transporte</option>
+            <option>Saúde</option>
+          </optgroup>
         </select>
         {
           editor
@@ -78,6 +90,7 @@ class WalletForm extends Component {
               <button
                 type="button"
                 onClick={ () => onClickEdit() }
+                className="button_expense_form"
               >
                 Editar despesa
               </button>
@@ -86,6 +99,7 @@ class WalletForm extends Component {
               <button
                 type="button"
                 onClick={ () => onClickSave() }
+                className="button_expense_form"
               >
                 Adicionar despesa
               </button>)

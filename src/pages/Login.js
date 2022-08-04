@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import { saveLoginEmail as saveLoginEmailAction } from '../redux/actions/index';
+import './Login.css'
+import logo from '../assets/logo.jpg';
 
 class Login extends Component {
   constructor() {
@@ -39,38 +41,47 @@ class Login extends Component {
   render() {
     const { isDisabled, login } = this.state;
     return (
-      <div>
-        <h2>TrybeWallet</h2>
-        <form>
-          <label htmlFor="email-input">
-            <input
-              data-testid="email-input"
-              type="email"
-              id="email-input"
-              name="email-input"
-              placeholder="Email"
-              onChange={ (event) => this.handleEmailChange(event) }
-            />
-          </label>
-          <label htmlFor="password-input">
-            <input
-              data-testid="password-input"
-              type="password"
-              id="password-input"
-              name="password-input"
-              placeholder="Senha"
-              onChange={ (event) => this.verifyLogin(event) }
-            />
-          </label>
-          <button
-            type="button"
-            disabled={ isDisabled }
-            onClick={ () => this.login() }
-          >
-            Entrar
-          </button>
-        </form>
-        { login && <Redirect to="/carteira" />}
+      <div className="login_container">
+        <div className="user_form_container">
+          <h2 className="title">Trybe<span>Wallet</span></h2>
+          <form className="user_form">
+            <label htmlFor="email-input">
+              <input
+                data-testid="email-input"
+                type="email"
+                id="email-input"
+                name="email-input"
+                placeholder="Email"
+                onChange={ (event) => this.handleEmailChange(event) }
+                className="email_input"
+              />
+            </label>
+            <label htmlFor="password-input">
+              <input
+                data-testid="password-input"
+                type="password"
+                id="password-input"
+                name="password-input"
+                placeholder="Senha"
+                onChange={ (event) => this.verifyLogin(event) }
+                className="password_input"
+              />
+            </label>
+            <button
+              type="button"
+              disabled={ isDisabled }
+              onClick={ () => this.login() }
+              className="button_user_form"
+            >
+              Entrar
+            </button>
+          </form>
+          { login && <Redirect to="/carteira" />}
+        </div>
+
+        <div className="image_container">
+          <img src={ logo } alt='' className="logo_image" />
+        </div>
       </div>);
   }
 }

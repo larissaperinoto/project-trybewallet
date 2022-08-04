@@ -15,6 +15,9 @@ import {
   deleteExpense as deleteExpenseAction,
 } from '../redux/actions';
 
+import './Wallet.css';
+import { Redirect } from 'react-router-dom';
+
 const INITIAL_STATE = {
   id: '',
   value: '',
@@ -91,20 +94,26 @@ class Wallet extends Component {
   }
 
   render() {
+    const { exit } = this.props;
     return (
-      <>
-        <Header />
-        <WalletForm
-          { ...this.state }
-          handleChange={ this.handleChange }
-          onClickSave={ this.onClickSave }
-          onClickEdit={ this.onClickEdit }
+      <div className="wallet_container">
+        <Header
+          exitWallet={ this.exitWallet }
         />
-        <Table
-          handleDeleteExpense={ this.handleDeleteExpense }
-          handleEditExpense={ this.handleEditExpense }
-        />
-      </>
+        <div className="body_wallet_container">
+          <WalletForm
+            { ...this.state }
+            handleChange={ this.handleChange }
+            onClickSave={ this.onClickSave }
+            onClickEdit={ this.onClickEdit }
+          />
+          <Table
+            handleDeleteExpense={ this.handleDeleteExpense }
+            handleEditExpense={ this.handleEditExpense }
+          />
+        </div>
+        { exit && <Redirect to="/" /> }
+      </div>
     );
   }
 }
@@ -112,6 +121,7 @@ class Wallet extends Component {
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
   idToEdit: state.wallet.idToEdit,
+  exit: state.user.exit,
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.login_container {
+  width: 100%;
+  display: flex;
+  background-color: rgb(17, 74, 124, 0.9);
+}
+
+.user_form_container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 80px;
+  font-family: 'Anton', sans-serif;
+  color: rgba(240, 255, 255, 0.93);
+  margin: 150px 0 50px 0;
+}
+
+.title span {
+  color: rgba(140, 77, 138, 0.8);
+  font-size: 95px;
+  font-weight: 600;
+  text-shadow: -3px 2px 0 wheat;
+}
+
+.user_form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 50px;
+  line-height: 20px;
+  background-color: rgba(76, 54, 136, 0.273);
+  box-shadow: -4px 2px 0 wheat;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+.email_input, .password_input {
+  width: 94%;
+  padding: 12px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.818);
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Righteous', cursive;
+  background-color: white;
+  cursor: pointer;
+}
+
+.email_input::placeholder, .password_input::placeholder {
+  color: rgba(55, 55, 55, 0.656);
+  font-weight: 600;
+  font-family: 'Righteous', cursive;
+}
+
+.email_input:hover, .password_input:hover {
+  box-shadow: -1px 2px 0 wheat;
+}
+
+.button_user_form {
+  width: 101%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.855);
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  font-family: 'Righteous', cursive;
+  box-shadow: -1px 2px 0 wheat;
+  cursor: pointer;
+}
+
+.button_user_form:hover {
+  box-shadow: -3px 2px 0 wheat;
+  background-color: rgba(140, 77, 138, 0.8);
+}
+
+.image_container {
+  width: 50%;
+}
+
+.logo_image {
+  width: 100%;
+}

@@ -1,0 +1,33 @@
+.table_container {
+  width: 87%;
+  padding: 20px 0;
+  text-align: center;
+  font-family: 'Righteous', cursive;
+}
+
+.head_table th {
+  color: white;
+  padding: 20px 40px;
+  border-radius: 4px;
+  background-color: rgb(17, 74, 124, 0.9);
+}
+
+.expense td {
+  padding: 10px 0;
+}
+
+.button_table {
+  padding: 7px 10px;
+  border: 3px solid white;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.855);
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  font-size: 15px;
+  font-family: 'Righteous', cursive;
+  cursor: pointer;
+}
+
+.button_table:hover {
+  background-color: rgba(140, 77, 138, 0.8);
+}
