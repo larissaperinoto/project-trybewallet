@@ -21,3 +21,7 @@ A imagem utilizada na página home foi retirada do site [Pexel](https://www.pexe
 Para exercutar o projeto utilize o comando abaixo para instalar as dependências após o clone do repositório.
 
       npm install
+
+Para executar os testes rode o seguinte comando.
+
+      npm test
