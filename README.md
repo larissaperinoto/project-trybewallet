@@ -10,9 +10,11 @@ A aplicação TrybeWallet foi desenvolvida para funcionar como uma carteira de c
 
 Neste projeto foi utilizado a biblioteca [React](https://pt-br.reactjs.org/) onde se trabalhou a ideia de ciclo de vida de componentes. O Trybewallet é uma Single Page Application e, portanto, foi utilizado o [React Router](https://reactrouter.com/) para navegar entra as páginas. Também foi utilizado a biblioteca [Redux](https://redux.js.org/) para gerenciamento do estado da aplicação. Para alinhar o código com as boas práticas de desenvolvimento foram utilizadas as ferramentas [ESLint](https://github.com/eslint/eslint) e [StyleLint](https://stylelint.io/). Os testes da aplicação foram desenvolvidos utilizando a [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
 
-#### Observações
+#### Referências
 
 Os arquivos `mockData.js`e `renderWith.js` foram fornecidos pela [Trybe](https://www.betrybe.com/) para a realização dos testes do projeto.
+
+A imagem utilizada na página home foi retirada do site [Pexel](https://www.pexels.com/pt-br/foto/contabilidade-analise-pesquisa-negocio-8296981/).
 
 #### Execução
 

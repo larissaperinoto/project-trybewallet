@@ -1,7 +1,8 @@
-import { SAVE_USER_LOGIN } from '../actions/index';
+import { SAVE_USER_LOGIN, EXIT_WALLET } from '../actions/index';
 
 const INITIAL_USER_STATE = {
   email: '',
+  exit: false,
 };
 
 const verifyUserLogin = (state = INITIAL_USER_STATE, action) => {
@@ -10,7 +11,13 @@ const verifyUserLogin = (state = INITIAL_USER_STATE, action) => {
     return {
       ...state,
       email: action.email,
+      exit: false,
     };
+    case EXIT_WALLET:
+      return {
+        ...state,
+        exit: true,
+      }
   default:
     return state;
   }
