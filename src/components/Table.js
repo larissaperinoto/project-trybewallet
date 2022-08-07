@@ -12,7 +12,7 @@ class Table extends Component {
           <thead className='head_table'>
             <tr>
               <th>Descrição</th>
-              <th>Tag</th>
+              <th>Categoria</th>
               <th>Método de pagamento</th>
               <th>Valor</th>
               <th>Moeda</th>

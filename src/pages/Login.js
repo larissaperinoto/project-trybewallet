@@ -15,6 +15,7 @@ class Login extends Component {
       isDisabled: true,
       email: '',
       login: false,
+      registration: false,
     };
   }
 
@@ -38,8 +39,12 @@ class Login extends Component {
     saveLoginEmail(email);
   }
 
+  registration = () => {
+    this.setState({ registration: true });
+  }
+
   render() {
-    const { isDisabled, login } = this.state;
+    const { isDisabled, login, registration } = this.state;
     return (
       <div className="login_container">
         <div className="user_form_container">
@@ -75,8 +80,11 @@ class Login extends Component {
             >
               Entrar
             </button>
+          <p className="registration_text">Não possui conta?
+            <span onClick={ () => this.registration() }>Cadastrar</span>.</p>
           </form>
           { login && <Redirect to="/carteira" />}
+          { registration && <Redirect  to="/cadastrar" />}
         </div>
 
         <div className="image_container">

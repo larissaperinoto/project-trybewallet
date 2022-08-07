@@ -50,8 +50,14 @@ class WalletForm extends Component {
           onChange={ (event) => handleChange(event) }
           className="currency_select"
         >
-          <optgroup label="Moeda">
-            {currencies.map((item, i) => <option key={ i }>{item}</option>)}
+          <optgroup>
+            {currencies.map((item, i) => (
+              <>
+
+              <option key={ i }>{item}</option>
+
+              </>
+              ))}
           </optgroup>
         </select>
 
@@ -62,8 +68,9 @@ class WalletForm extends Component {
           onChange={ (event) => handleChange(event) }
           className="method_select"
         >
-          <optgroup label="Método de pagamento">
-            <option>Dinheiro</option>
+          <optgroup>
+            <option>Método de pagamento</option>
+            <option selected>Dinheiro</option>
             <option>Cartão de crédito</option>
             <option>Cartão de débito</option>
           </optgroup>
@@ -76,7 +83,8 @@ class WalletForm extends Component {
           onChange={ (event) => handleChange(event) }
           className="tag_select"
         >
-          <optgroup label="Categoria">
+          <optgroup>
+            <option>Categoria</option>
             <option>Alimentação</option>
             <option>Lazer</option>
             <option>Trabalho</option>
