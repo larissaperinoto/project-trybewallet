@@ -36,9 +36,8 @@ class Registration extends Component {
     const { saveUserData } = this.props;
     const { name, nickname, email, password } = this.state;
     saveUserData({ name, nickname, email, password });
-    localStorage.setItem('userData', JSON.stringify({ name, nickname, email, password } ));
+    localStorage.setItem('userData', JSON.stringify({ name, nickname, email, password }));
   }
-
 
   render() {
     return (

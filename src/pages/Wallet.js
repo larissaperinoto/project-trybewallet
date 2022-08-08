@@ -121,7 +121,7 @@ class Wallet extends Component {
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
   idToEdit: state.wallet.idToEdit,
-  exit: state.user.exit,
+  exit: state.userLogin.exit,
 });
 
 const mapDispatchToProps = (dispatch) => ({
