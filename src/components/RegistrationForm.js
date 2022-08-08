@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 class RegistrationForm extends Component {
   render() {
+    const { name,
+      nickname,
+      email,
+      password,
+      isDisabled,
+      handleChange,
+      handleClickSave } = this.props;
     return (
       <form>
         <label htmlFor="name-input">
@@ -10,8 +18,8 @@ class RegistrationForm extends Component {
             id="name-input"
             name="name"
             placeholder="Nome"
-            /* onChange={}
-            value={} */
+            onChange={ (event) => handleChange(event) }
+            value={ name }
           />
         </label>
         <label htmlFor="nickname-input">
@@ -20,8 +28,8 @@ class RegistrationForm extends Component {
             id="nickname-input"
             name="nickname"
             placeholder="Sobrenome"
-            /* onChange={}
-            value={} */
+            onChange={ (event) => handleChange(event)  }
+            value={ nickname }
           />
         </label>
         <label htmlFor="email-input">
@@ -30,8 +38,8 @@ class RegistrationForm extends Component {
             id="email-input"
             name="email"
             placeholder="Email"
-            /* onChange={}
-            value={} */
+            onChange={ (event) => handleChange(event)  }
+            value={ email }
           />
         </label>
         <label htmlFor="password-input">
@@ -40,13 +48,14 @@ class RegistrationForm extends Component {
             id="password-input"
             name="password"
             placeholder="Senha"
-            /* onChange={}
-            value={} */
+            onChange={ (event) => handleChange(event)  }
+            value={ password }
           />
         </label>
         <button
           type="button"
-          // onClick={}
+          disabled={ isDisabled }
+          onClick={ handleClickSave }
         >
           Cadastrar
         </button>
@@ -54,5 +63,13 @@ class RegistrationForm extends Component {
     );
   }
 }
+
+RegistrationForm.propTypes = {
+  name: PropTypes.string,
+  nickname: PropTypes.string,
+  email: PropTypes.string,
+  password: PropTypes.string,
+  handleChange: PropTypes.func,
+}.isRequired;
 
 export default RegistrationForm;
