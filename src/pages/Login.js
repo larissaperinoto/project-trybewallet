@@ -34,9 +34,7 @@ class Login extends Component {
 
   enableButton = () => {
     const { email, password } = this.state;
-    const verifyEmail = (/\S+@\S+\.\S+/).test(email);
-    const verifyPassword = password.length > 6;
-    if (verifyEmail && verifyPassword) {
+    if (email && password) {
       this.setState({ isDisabled: false });
     } else {
       this.setState({ isDisabled: true });
@@ -62,12 +60,12 @@ class Login extends Component {
   handleClickStayLoged = () => {
     const { clickStayLoged } = this.props;
     const { emailData, passwordData } = this.props;
-    this.setState({ email: emailData, password: passwordData });
     clickStayLoged();
+    this.setState({ email: emailData, password: passwordData }, () => this.enableButton());
   }
 
   render() {
-    const { isDisabled, registration } = this.state;
+    const { isDisabled, registration, email, password } = this.state;
     const { isLoged, stayLoged } = this.props;
     return (
       <div className="login_container">
@@ -82,6 +80,7 @@ class Login extends Component {
                 name="email"
                 placeholder="Email"
                 onChange={ (event) => this.handleEmailChange(event) }
+                value={ email }
                 className="email_input"
               />
             </label>
@@ -93,6 +92,7 @@ class Login extends Component {
                 name="password"
                 placeholder="Senha"
                 onChange={ (event) => this.handleEmailChange(event) }
+                value={ password }
                 className="password_input"
               />
             </label>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
+import './RegistrationForm.css';
+
 class RegistrationForm extends Component {
   render() {
     const { name,
