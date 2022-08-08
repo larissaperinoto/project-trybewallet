@@ -6,6 +6,7 @@ export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 export const TO_EDIT = 'TO_EDIT';
 export const EXIT_WALLET = 'EXIT_WALLET';
+export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 
 export const saveLoginEmail = (email) => ({
   type: SAVE_USER_LOGIN,
@@ -44,3 +45,8 @@ export const toEdit = () => ({
 export const exitWalletPage = () => ({
   type: 'EXIT_WALLET'
 });
+
+export const saveUserData = (user) => ({
+  type: 'SAVE_USER_DATA',
+  user,
+})
