@@ -122,7 +122,7 @@ class Login extends Component {
         </div>
 
         <div className="image_container">
-          <img src={ logo } alt='' className="logo_image" />
+          <img src={ logo } alt='Woman typing on notebook' className="logo_image" />
         </div>
       </div>);
   }
