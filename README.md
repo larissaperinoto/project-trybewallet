@@ -14,7 +14,7 @@ Neste projeto foi utilizado a biblioteca [React](https://pt-br.reactjs.org/) ond
 
 Os arquivos `mockData.js`e `renderWith.js` foram fornecidos pela [Trybe](https://www.betrybe.com/) para a realização dos testes do projeto.
 
-A imagem utilizada na página home foi retirada do site [Pexel](https://www.pexels.com/pt-br/foto/contabilidade-analise-pesquisa-negocio-8296981/).
+As imagens utilizadas na aplicação foram retiradas do site [Pexel](https://www.pexels.com/).
 
 #### Execução
 
