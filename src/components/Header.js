@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './Header.css'
 
-import { exitWalletPage as exitWalletPageAction } from '../redux/actions';
-
 class Header extends Component {
+  exitWalletPage = () => {
+    const { history: { location } } = this.props;
+    location.pathname.push('/project-trybewallet');
+  }
+
   render() {
     const { name, total, exitWalletPage } = this.props;
-    console.log(name)
     return (
       <div className="header_container">
         <div className="logo_email_container">
@@ -39,9 +41,6 @@ const mapStateToProps = (state) => ({
   total: state.wallet.total,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  exitWalletPage: () => dispatch(exitWalletPageAction()),
-});
 
 Header.propTypes = {
   name: PropTypes.string,
@@ -49,4 +48,4 @@ Header.propTypes = {
   exitWalletPage: PropTypes.func,
 }.isRequired;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);

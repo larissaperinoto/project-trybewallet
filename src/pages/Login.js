@@ -25,7 +25,7 @@ class Login extends Component {
   componentDidMount() {
     const { saveUserData } = this.props;
     const data = JSON.parse(localStorage.getItem('userData'));
-    saveUserData(data);
+    if (data) saveUserData(data);
   }
 
   handleEmailChange = ({ target: { value, name } }) => {
@@ -135,10 +135,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  isLoged: state.userLogin.isLoged,
-  emailData: state.userData.email,
-  passwordData: state.userData.password,
-  stayLoged: state.userLogin.stayLoged,
+  ...state.userLogin,
+  ...state.userData,
 });
 
 Login.propTypes = {

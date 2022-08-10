@@ -5,7 +5,6 @@ export const SUM_TOTAL_EXCHANGE = 'SUM_TOTAL_EXCHANGE';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 export const TO_EDIT_EXPENSE = 'TO_EDIT_EXPENSE';
-export const EXIT_WALLET = 'EXIT_WALLET';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const CLICK_STAY_LOGED = 'CLICK_STAY_LOGED';
 
@@ -40,10 +39,6 @@ export const editExpense = (id) => ({
 
 export const toEdit = () => ({
   type: TO_EDIT_EXPENSE,
-});
-
-export const exitWalletPage = () => ({
-  type: EXIT_WALLET,
 });
 
 export const saveUserData = (user) => ({
