@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './NotFound.css';
 
 class NotFound extends Component {
   render() {
     return (
-      <div>
+      <div className="notFound-container">
         <h2>Página não encontrada!</h2>
       </div>
     );
