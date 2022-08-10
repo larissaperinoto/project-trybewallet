@@ -7,12 +7,13 @@ import { exitWalletPage as exitWalletPageAction } from '../redux/actions';
 
 class Header extends Component {
   render() {
-    const { email, total, exitWalletPage } = this.props;
+    const { name, total, exitWalletPage } = this.props;
+    console.log(name)
     return (
       <div className="header_container">
         <div className="logo_email_container">
           <h2 className="title_header">Trybe<span>Wallet</span></h2>
-          <span data-testid="email-field" className="user_email">{ `Olá, ${email}` }</span>
+          <span data-testid="email-field" className="user_email">{ `Olá, ${name}` }</span>
         </div>
         <div className="total_container">
           <span
@@ -34,7 +35,7 @@ class Header extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  email: state.user.email,
+  name: state.userData.name,
   total: state.wallet.total,
 });
 
@@ -43,7 +44,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Header.propTypes = {
-  email: PropTypes.string,
+  name: PropTypes.string,
   total: PropTypes.string,
   exitWalletPage: PropTypes.func,
 }.isRequired;

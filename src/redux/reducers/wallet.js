@@ -4,7 +4,7 @@ import {
   SUM_TOTAL_EXCHANGE,
   DELETE_EXPENSE,
   EDIT_EXPENSE,
-  TO_EDIT,
+  TO_EDIT_EXPENSE,
 } from '../actions';
 
 const INITIAL_WALLET_STATE = {
@@ -15,7 +15,7 @@ const INITIAL_WALLET_STATE = {
   total: 0,
 };
 
-const waletReducer = (state = INITIAL_WALLET_STATE, action) => {
+const walletReducer = (state = INITIAL_WALLET_STATE, action) => {
   switch (action.type) {
   case GET_CURRENCIES:
     return {
@@ -44,7 +44,7 @@ const waletReducer = (state = INITIAL_WALLET_STATE, action) => {
       ...state,
       idToEdit: action.idToEdit,
     };
-  case TO_EDIT:
+  case TO_EDIT_EXPENSE:
     return {
       ...state,
       editor: !state.editor,
@@ -54,4 +54,4 @@ const waletReducer = (state = INITIAL_WALLET_STATE, action) => {
   }
 };
 
-export default waletReducer;
+export default walletReducer;
