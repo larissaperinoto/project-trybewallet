@@ -1,6 +1,4 @@
-import {
-  VERIFY_USER_LOGIN,
-  CLICK_STAY_LOGED } from '../actions/index';
+import { CLICK_STAY_LOGED } from '../actions/index';
 
 const INITIAL_USER_STATE = {
   isLoged: false,
@@ -9,16 +7,11 @@ const INITIAL_USER_STATE = {
 
 const verifyUserLogin = (state = INITIAL_USER_STATE, action) => {
   switch (action.type) {
-  case VERIFY_USER_LOGIN:
+  case CLICK_STAY_LOGED:
     return {
       ...state,
-      isLoged: true,
-    };
-    case CLICK_STAY_LOGED:
-      return {
-        ...state,
-        stayLoged: !state.stayLoged,
-      }
+      stayLoged: !state.stayLoged,
+    }
   default:
     return state;
   }

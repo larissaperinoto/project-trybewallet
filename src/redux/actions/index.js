@@ -1,4 +1,3 @@
-export const VERIFY_USER_LOGIN = 'VERIFY_USER_LOGIN';
 export const GET_CURRENCIES = 'GET_CURRENCIES';
 export const SAVE_EXPENSE = 'SAVE_EXPENSE';
 export const SUM_TOTAL_EXCHANGE = 'SUM_TOTAL_EXCHANGE';
@@ -7,10 +6,6 @@ export const EDIT_EXPENSE = 'EDIT_EXPENSE';
 export const TO_EDIT_EXPENSE = 'TO_EDIT_EXPENSE';
 export const SAVE_USER_DATA = 'SAVE_USER_DATA';
 export const CLICK_STAY_LOGED = 'CLICK_STAY_LOGED';
-
-export const verifyUserLogin = () => ({
-  type: VERIFY_USER_LOGIN,
-});
 
 export const getCurrencies = (currencies) => ({
   type: GET_CURRENCIES,
