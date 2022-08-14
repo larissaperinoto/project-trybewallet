@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 import './Header.css'
 
 class Header extends Component {
-  exitWalletPage = () => {
-    const { history: { location } } = this.props;
-    location.pathname.push('/project-trybewallet');
-  }
-
   render() {
     const { name, total, exitWalletPage } = this.props;
     return (

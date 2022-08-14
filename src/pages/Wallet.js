@@ -91,10 +91,15 @@ class Wallet extends Component {
     sumTotal(total);
   }
 
+  exitWalletPage = () => {
+    const { history } = this.props;
+    history.push('/project-trybewallet');
+  }
+
   render() {
     return (
       <div className="wallet_container">
-        <Header />
+        <Header exitWalletPage={ this.exitWalletPage } />
         <div className="body_wallet_container">
           <WalletForm
             { ...this.state }
