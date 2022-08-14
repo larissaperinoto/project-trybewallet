@@ -15,8 +15,8 @@ class Login extends Component {
 
     this.state = {
       isDisabled: true,
-      email: '',
-      password: '',
+      emailLocal: '',
+      passwordLocal: '',
     };
   }
 
@@ -31,8 +31,8 @@ class Login extends Component {
   }
 
   enableButton = () => {
-    const { email, password } = this.state;
-    if (email && password) {
+    const { emailLocal, passwordLocal } = this.state;
+    if (emailLocal && passwordLocal) {
       this.setState({ isDisabled: false });
     } else {
       this.setState({ isDisabled: true });
@@ -40,12 +40,12 @@ class Login extends Component {
   }
 
   login = () => {
-    const { emailData, passwordData, history } = this.props;
-    const { email, password } = this.state;
-    if (passwordData !== password) {
-      return alert('Senha incorreta!');
-    } else if (emailData !== email) {
+    const { email, password, history } = this.props;
+    const { emailLocal, passwordLocal } = this.state;
+    if (email !== emailLocal) {
       return alert('Usuário não encontrado, clique em Cadastrar!');
+    } else if (password !== passwordLocal) {
+      return alert('Senha incorreta!');
     } else {
       history.push('/carteira');
     }
@@ -76,7 +76,7 @@ class Login extends Component {
                 data-testid="email-input"
                 type="email"
                 id="email-input"
-                name="email"
+                name="emailLocal"
                 placeholder="Email"
                 onChange={(event) => this.handleChange(event)}
                 value={email}
@@ -88,7 +88,7 @@ class Login extends Component {
                 data-testid="password-input"
                 type="password"
                 id="password-input"
-                name="password"
+                name="passwordLocal"
                 placeholder="Senha"
                 onChange={ (event) => this.handleChange(event) }
                 value={password}

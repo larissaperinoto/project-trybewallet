@@ -1,7 +1,6 @@
 import { CLICK_STAY_LOGED } from '../actions/index';
 
 const INITIAL_USER_STATE = {
-  isLoged: false,
   stayLoged: false,
 };
 
