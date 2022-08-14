@@ -16,7 +16,6 @@ import {
 } from '../redux/actions';
 
 import './Wallet.css';
-import { Redirect } from 'react-router-dom';
 
 const INITIAL_STATE = {
   id: '',
@@ -82,7 +81,6 @@ class Wallet extends Component {
   handleDeleteExpense = (obj) => {
     const { deleteExpense } = this.props;
     deleteExpense(obj);
-    this.calculateTotal();
     this.setState({}, () => this.calculateTotal());
   }
 
@@ -93,13 +91,15 @@ class Wallet extends Component {
     sumTotal(total);
   }
 
+  exitWalletPage = () => {
+    const { history } = this.props;
+    history.push('/project-trybewallet');
+  }
+
   render() {
-    const { exit } = this.props;
     return (
       <div className="wallet_container">
-        <Header
-          exitWallet={ this.exitWallet }
-        />
+        <Header exitWalletPage={ this.exitWalletPage } />
         <div className="body_wallet_container">
           <WalletForm
             { ...this.state }
@@ -112,16 +112,14 @@ class Wallet extends Component {
             handleEditExpense={ this.handleEditExpense }
           />
         </div>
-        { exit && <Redirect to="/" /> }
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  expenses: state.wallet.expenses,
-  idToEdit: state.wallet.idToEdit,
-  exit: state.userLogin.exit,
+  ...state.wallet,
+  ...state.userLogin,
 });
 
 const mapDispatchToProps = (dispatch) => ({

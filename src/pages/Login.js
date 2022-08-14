@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 import {
-  verifyUserLogin as verifyUserLoginAction,
   saveUserData as saveUserDataAction,
-  clickStayLoged as clickStayLogedAction } from '../redux/actions/index';
+  clickStayLoged as clickStayLogedAction
+} from '../redux/actions/index';
 import './Login.css'
 import logo from '../assets/logo.jpg';
 
@@ -16,25 +15,24 @@ class Login extends Component {
 
     this.state = {
       isDisabled: true,
-      email: '',
-      password: '',
-      registration: false,
+      emailLocal: '',
+      passwordLocal: '',
     };
   }
 
   componentDidMount() {
     const { saveUserData } = this.props;
     const data = JSON.parse(localStorage.getItem('userData'));
-    saveUserData(data);
+    if (data) saveUserData(data);
   }
 
-  handleEmailChange = ({ target: { value, name } }) => {
+  handleChange = ({ target: { value, name } }) => {
     this.setState({ [name]: value }, () => this.enableButton());
   }
 
   enableButton = () => {
-    const { email, password } = this.state;
-    if (email && password) {
+    const { emailLocal, passwordLocal } = this.state;
+    if (emailLocal && passwordLocal) {
       this.setState({ isDisabled: false });
     } else {
       this.setState({ isDisabled: true });
@@ -42,19 +40,20 @@ class Login extends Component {
   }
 
   login = () => {
-    const { verifyUserLogin, emailData, passwordData } = this.props;
-    const { email, password } = this.state;
-    if (passwordData !== password) {
-      return alert('Senha incorreta!');
-    } else if (emailData !== email) {
+    const { email, password, history } = this.props;
+    const { emailLocal, passwordLocal } = this.state;
+    if (email !== emailLocal) {
       return alert('Usuário não encontrado, clique em Cadastrar!');
+    } else if (password !== passwordLocal) {
+      return alert('Senha incorreta!');
     } else {
-      verifyUserLogin();
+      history.push('/carteira');
     }
   }
 
   registration = () => {
-    this.setState({ registration: true });
+    const { history } = this.props;
+    history.push('/cadastrar');
   }
 
   handleClickStayLoged = () => {
@@ -65,8 +64,8 @@ class Login extends Component {
   }
 
   render() {
-    const { isDisabled, registration, email, password } = this.state;
-    const { isLoged, stayLoged } = this.props;
+    const { isDisabled, email, password } = this.state;
+    const { stayLoged } = this.props;
     return (
       <div className="login_container">
         <div className="user_form_container">
@@ -77,10 +76,10 @@ class Login extends Component {
                 data-testid="email-input"
                 type="email"
                 id="email-input"
-                name="email"
+                name="emailLocal"
                 placeholder="Email"
-                onChange={ (event) => this.handleEmailChange(event) }
-                value={ email }
+                onChange={(event) => this.handleChange(event)}
+                value={email}
                 className="email_input"
               />
             </label>
@@ -89,10 +88,10 @@ class Login extends Component {
                 data-testid="password-input"
                 type="password"
                 id="password-input"
-                name="password"
+                name="passwordLocal"
                 placeholder="Senha"
-                onChange={ (event) => this.handleEmailChange(event) }
-                value={ password }
+                onChange={ (event) => this.handleChange(event) }
+                value={password}
                 className="password_input"
               />
             </label>
@@ -115,35 +114,30 @@ class Login extends Component {
               />
             </label>
             <p className="registration_text">Não possui conta?
+              {' '}
               <span onClick={ () => this.registration() }>Cadastrar</span>.</p>
           </form>
-          {isLoged && <Redirect to="/carteira" />}
-          {registration && <Redirect to="/cadastrar" />}
         </div>
 
         <div className="image_container">
           <img src={ logo } alt='Woman typing on notebook' className="logo_image" />
         </div>
-      </div>);
+      </div>
+    );
   }
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  verifyUserLogin: () => dispatch(verifyUserLoginAction()),
   saveUserData: (data) => dispatch(saveUserDataAction(data)),
   clickStayLoged: () => dispatch(clickStayLogedAction()),
 });
 
 const mapStateToProps = (state) => ({
-  isLoged: state.userLogin.isLoged,
-  emailData: state.userData.email,
-  passwordData: state.userData.password,
-  stayLoged: state.userLogin.stayLoged,
+  ...state.userLogin,
+  ...state.userData,
 });
 
 Login.propTypes = {
-  verifyUserLogin: PropTypes.func,
-  isLoged: PropTypes.bool,
   stayLoged: PropTypes.bool,
   clickStayLoged: PropTypes.func,
   emailData: PropTypes.string,

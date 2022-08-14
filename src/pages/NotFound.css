@@ -1,0 +1,10 @@
+.notFound-container {
+  width: 100%;
+  background-color: rgb(17, 74, 124, 0.9);
+}
+
+.notFound-container h2 {
+  color: white;
+  font-size: 40px;
+  font-family: 'Righteous', cursive;
+}

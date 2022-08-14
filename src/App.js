@@ -9,7 +9,7 @@ import NotFound from './pages/NotFound';
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={ Login } />
+      <Route path="/project-trybewallet" component={ Login } />
       <Route path="/carteira" component={ Wallet } />
       <Route path="/cadastrar" component={ Registration }/>
       <Route path="/*" component={ NotFound } />
