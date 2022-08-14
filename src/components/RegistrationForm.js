@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
 import './RegistrationForm.css';
-import registration from '../assets/registration.jpg';
 
 class RegistrationForm extends Component {
   render() {
@@ -12,15 +11,9 @@ class RegistrationForm extends Component {
       password,
       isDisabled,
       handleChange,
-      handleClickSave } = this.props;
+      handleClickSave,
+      returnToLogin } = this.props;
     return (
-      <div className="registration-container">
-        <img
-          className="registration-image"
-          src={ registration }
-          alt="Woman holding credit card in front of notebook" />
-        <div className="registration-form-container">
-          <h2>Cadastre-se</h2>
           <form className="registration-form">
             <label htmlFor="name-input">
               <input
@@ -69,9 +62,13 @@ class RegistrationForm extends Component {
             >
               Enviar
             </button>
+              <span
+                onClick={ returnToLogin }
+                className="registration-return"
+              >
+                Fazer login.
+              </span>
           </form>
-        </div>
-      </div>
     );
   }
 }
@@ -82,6 +79,7 @@ RegistrationForm.propTypes = {
   email: PropTypes.string,
   password: PropTypes.string,
   handleChange: PropTypes.func,
+  returnToLogin: PropTypes.func,
 }.isRequired;
 
 export default RegistrationForm;

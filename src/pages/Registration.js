@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import RegistrationForm from '../components/RegistrationForm';
 import { saveUserData as saveUserDataAction } from '../redux/actions';
+import registration from '../assets/registration.jpg';
+import './Registration.css';
 
 const INITIAL_STATE = {
   name: '',
@@ -52,17 +54,26 @@ class Registration extends Component {
 
   render() {
     return (
-      <>
-        <RegistrationForm
-          handleChange={ this.handleChange }
-          handleClickSave={ this.handleClickSave }
-          {... this.state }
+      <div className="registration-container">
+        <img
+          className="registration-image"
+          src={ registration }
+          alt="Woman holding credit card in front of notebook"
         />
-         <span onClick={ () => this.returnToLogin() }>Fazer login</span>
-      </>
+        <div className="registration-form-container">
+          <h2>Cadastre-se</h2>
+          <RegistrationForm
+            handleChange={ this.handleChange }
+            handleClickSave={ this.handleClickSave }
+            returnToLogin={ this.returnToLogin }
+            {... this.state }
+          />
+        </div>
+      </div>
     );
   }
 }
+
 
 const mapDispatchToProps = (dispatch) => ({
   saveUserData: (user) => dispatch(saveUserDataAction(user)),
