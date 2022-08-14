@@ -118,7 +118,7 @@ class Wallet extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  ...state.Wallet,
+  ...state.wallet,
   ...state.userLogin,
 });
 

@@ -51,13 +51,7 @@ class WalletForm extends Component {
           className="currency_select"
         >
           <optgroup>
-            {currencies.map((item, i) => (
-              <>
-
-              <option key={ i }>{item}</option>
-
-              </>
-              ))}
+            {currencies.map((item, i) => ( <option key={ i }>{ item }</option> ))}
           </optgroup>
         </select>
 
@@ -70,7 +64,7 @@ class WalletForm extends Component {
         >
           <optgroup>
             <option>Método de pagamento</option>
-            <option selected>Dinheiro</option>
+            <option>Dinheiro</option>
             <option>Cartão de crédito</option>
             <option>Cartão de débito</option>
           </optgroup>
@@ -118,8 +112,7 @@ class WalletForm extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  currencies: state.wallet.currencies,
-  editor: state.wallet.editor,
+  ...state.wallet,
 });
 
 WalletForm.propTypes = {
