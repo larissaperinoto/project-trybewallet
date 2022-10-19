@@ -2,21 +2,32 @@
 
 A [Trybe](https://www.betrybe.com/) é uma escola de tecnologia com foco em formação de Desenvolvedores Web e o projeto TrybeWallet foi proposto como atividade de aprimoramento dos estudos sobre o desenvolvimento front-end utilizando [Redux](https://redux.js.org/).
 
-### Objetivos
+## Objetivos
 
 A aplicação TrybeWallet foi desenvolvida para funcionar como uma carteira de controle de gastos com conversor de moedas. A aplicação deve permitir que o usuário adicione, remova e edite um gasto. Deve exibir todos os gastos adicionados em ordem e mostrar o total, representando todas as despesas adicionadas pelo usuário.
 
-### Tecnologias e Ferramentas
+## Tecnologias e Ferramentas
 
-Neste projeto foi utilizado a biblioteca [React](https://pt-br.reactjs.org/) onde se trabalhou a ideia de ciclo de vida de componentes. O Trybewallet é uma Single Page Application e, portanto, foi utilizado o [React Router](https://reactrouter.com/) para navegar entra as páginas. Também foi utilizado a biblioteca [Redux](https://redux.js.org/) para gerenciamento do estado da aplicação. Para alinhar o código com as boas práticas de desenvolvimento foram utilizadas as ferramentas [ESLint](https://github.com/eslint/eslint) e [StyleLint](https://stylelint.io/). Os testes da aplicação foram desenvolvidos utilizando a [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
+<div>
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="html" />
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="css" />
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="javascript" />
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" />
+    <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" alt="redux" />
+    <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="react router" />
+</div>
 
-### Referências
+<br>
 
-Os arquivos `mockData.js`e `renderWith.js` foram fornecidos pela [Trybe](https://www.betrybe.com/) para a realização dos testes do projeto.
+No desenvolvimento deste projeto foram utilizadas as seguintes ferramentas:
+- [React](https://pt-br.reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+- [Redux](https://redux.js.org/)
+- [ESLint](https://github.com/eslint/eslint)
+- [StyleLint](https://stylelint.io/)
 
-As imagens utilizadas na aplicação foram retiradas do site [Pexel](https://www.pexels.com/).
-
-### Execução
+## Execução
 
 Faça o clone deste repositório com o comando abaixo.
 
@@ -34,6 +45,23 @@ Para executar testes individualmente, faça uma adaptação do comando a seguir.
 
       npm test <nome-do-arquivo>
       
- Acesse a aplicação [aqui](https://larissaperinoto.github.io/project-trybewallet/).
+      
+ Inicie a aplicação com o comando abaixo.
+ 
+      npm start
+      
       
  ![Captura de tela de 2022-10-17 09-22-57](https://user-images.githubusercontent.com/98956659/196176733-5b2827d4-30bb-4d5f-88aa-e90c1cafe44e.png)
+
+ Acesse a aplicação [aqui](https://larissaperinoto.github.io/project-trybewallet/).
+ 
+## Referências
+
+Os arquivos `mockData.js`e `renderWith.js` foram fornecidos pela [Trybe](https://www.betrybe.com/) para a realização dos testes do projeto.
+
+As imagens utilizadas na aplicação foram retiradas do site [Pexel](https://www.pexels.com/).
+
+ 
+---
+ 
+Desenvolvido por [Larissa Perinoto](www.linkedin.com/in/larissaperinoto), © 2022.
